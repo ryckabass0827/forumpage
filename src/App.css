@@ -18,3 +18,7 @@ body {
   padding: 15px;
   gap: 10px;
 }
+
+.question {
+  border: black 1px solid;
+}

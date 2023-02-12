@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import Moment from "react-moment";
+import Answer from "./Answer";
+import EditAnswer from "./EditAnswer";
 
-function AnswerList({ question, onUpdateQuestion, onAddAnswer }) {
+function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question }) {
     const [answerText, setAnswerText] = useState("");
+    const [isEditing, setIsEditing] = useState(false);
 
-    const handleSubmitAnswer = () => {
+    const handleAddAnswer = () => {
         if (!answerText) {
-            return alert("Please enter an answer.");
+            alert("Please enter an answer.");
+            return;
         }
 
         const newAnswer = {
@@ -29,7 +33,8 @@ function AnswerList({ question, onUpdateQuestion, onAddAnswer }) {
         })
             .then((res) => res.json())
             .then((data) => {
-                onUpdateQuestion(data);
+                onAddAnswer(data.answers);
+                onUpdateAnswer(data.answers);
                 setAnswerText("");
             })
             .catch((error) => {
@@ -37,31 +42,51 @@ function AnswerList({ question, onUpdateQuestion, onAddAnswer }) {
             });
     };
 
-    if (!question || !question.answers) {
-        return null; // or display an error message
-    }
-
     return (
         <div className="answer-list">
             <h4>Answers:</h4>
-            {question.answers.map((answer) => (
-                <div key={answer.id}>
-                    <p>{answer.text}</p>
-                    <p>
-                        Answered by User {answer.authorId} on{" "}
-                        <Moment format="YYYY-MM-DD">{answer.createdAt}</Moment>
-                    </p>
+            {answers?.map((answer, index) => (
+                <div key={index}>
+                    {isEditing ? (
+                        <EditAnswer answer={answer} onUpdateAnswer={onUpdateAnswer} />
+                    ) : (
+                        <Answer
+                            answer={answer}
+                            onUpdateAnswer={() => setIsEditing(true)}
+                            onDeleteAnswer={() => {
+                                const updatedAnswers = answers.filter(
+                                    (ans) => ans.id !== answer.id
+                                );
+                                const updatedQuestion = { ...question, answers: updatedAnswers };
+                                fetch(`http://localhost:4000/questions/${question.id}`, {
+                                    method: "PATCH",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify(updatedQuestion)
+                                })
+                                    .then((res) => res.json())
+                                    .then((data) => {
+                                        onUpdateAnswer(data.answers);
+                                    })
+                                    .catch((error) => {
+                                        console.error(error);
+                                    });
+                            }}
+
+                        />
+                    )}
                 </div>
             ))}
-            <div className="new-answer">
-                <textarea
-                    value={answerText}
-                    onChange={(e) => setAnswerText(e.target.value)}
-                    placeholder="Enter your answer"
-                ></textarea>
-                <br />
-                <button onClick={handleSubmitAnswer}>Submit</button>
-            </div>
+            {isEditing ? null : (
+                <div className="new-answer">
+                    <textarea
+                        value={answerText}
+                        onChange={(e) => setAnswerText(e.target.value)}
+                        placeholder="Enter your answer"
+                    ></textarea>
+                    <br />
+                    <button onClick={handleAddAnswer}>Submit</button>
+                </div>
+            )}
         </div>
     );
 }

@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
 import Moment from "react-moment";
-import AuthContext from '../context/AuthContext';
+import AuthContext from '../../context/AuthContext';
 
-function Answer({ answer }) {
-    const { isAuthenticated } = useContext(AuthContext);
+function Answer({ answer, onDeleteAnswer }) {
+    const { isAuthenticated, userId } = useContext(AuthContext);
     const [likes, setLikes] = useState(answer.likes);
     const [dislikes, setDislikes] = useState(answer.dislikes);
     const { text, authorId, createdAt } = answer;
@@ -42,6 +42,18 @@ function Answer({ answer }) {
         }
     };
 
+    const handleDelete = () => {
+        fetch(`http://localhost:4000/answers/${answer.id}`, {
+            method: "DELETE"
+        })
+            .then(() => {
+                onDeleteAnswer(answer.id);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+
     if (!isAuthenticated) {
         return <p>Please log in to post an answer.</p>;
     }
@@ -57,6 +69,9 @@ function Answer({ answer }) {
                 <button onClick={handleLike}>Like</button> {likes} |{" "}
                 <button onClick={handleDislike}>Dislike</button> {dislikes}
             </p>
+            {userId === authorId && (
+                <button onClick={handleDelete}>Delete</button>
+            )}
         </div>
     );
 }

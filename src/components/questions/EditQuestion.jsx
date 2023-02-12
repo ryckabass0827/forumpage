@@ -10,7 +10,7 @@ function EditQuestion({ question, onUpdateQuestion }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (isAuthenticated) {
+        if (!isAuthenticated) {
             return alert("Please log in to edit a question.");
         }
 

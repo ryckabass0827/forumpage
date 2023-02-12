@@ -5,7 +5,8 @@ import AuthContext from "../../context/AuthContext";
 import EditQuestion from "./EditQuestion";
 
 
-function Question({ question, onUpdateQuestion, onAddAnswer }) {
+
+function Question({ question, onUpdateQuestion, onDeleteAnswer, onUpdateAnswer, onDeleteQuestion }) {
     const { isAuthenticated, userId } = useContext(AuthContext);
     const [likes, setLikes] = useState(question.likes);
     const [dislikes, setDislikes] = useState(question.dislikes);
@@ -29,6 +30,9 @@ function Question({ question, onUpdateQuestion, onAddAnswer }) {
                 console.error(error);
             });
     }, [authorId]);
+
+
+
 
     const handleLike = () => {
         if (isAuthenticated && !reacted) {
@@ -66,7 +70,10 @@ function Question({ question, onUpdateQuestion, onAddAnswer }) {
         }
     };
 
-
+    const handleAddAnswer = (answer) => {
+        const updatedQuestion = { ...question, answers: [...question.answers, answer] };
+        onUpdateQuestion(updatedQuestion);
+    };
 
 
     const handleUpdate = (updatedQuestion) => {
@@ -95,12 +102,12 @@ function Question({ question, onUpdateQuestion, onAddAnswer }) {
             </p>
             {isAuthenticated && authorId === userId && (
                 <div>
+                    {userId === question.authorId && (
+                        <button onClick={() => onDeleteQuestion(question.id)}>Delete</button>
+                    )}
                     <button onClick={() => setIsEditing(true)}>Edit</button>
                     {isEditing && (
-                        <EditQuestion
-                            question={question}
-                            onUpdateQuestion={handleUpdate}
-                        />
+                        <EditQuestion question={question} onUpdateQuestion={onUpdateQuestion} />
                     )}
                 </div>
             )}
@@ -110,8 +117,14 @@ function Question({ question, onUpdateQuestion, onAddAnswer }) {
             </p>
             <AnswerList
                 answers={question.answers}
-                onAddAnswer={onAddAnswer}
+                handleAddAnswer={handleAddAnswer}
+                question={question}
+                onUpdateQuestion={onUpdateQuestion}
+                onDeleteAnswer={onDeleteAnswer}
+                onAddAnswer={handleAddAnswer}
+                onUpdateAnswer={onUpdateAnswer}
             />
+
         </div>
     );
 }

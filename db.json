@@ -21,54 +21,113 @@
   ],
   "questions": [
     {
-      "title": "kas yra ?",
-      "description": "niekas neveikia",
+      "id": 1,
+      "title": "pirmas",
+      "description": "klausimas ? koks klausimas ?",
       "authorId": "1",
       "createdAt": "2023-02-12T10:14:36.066Z",
       "likes": 2,
       "dislikes": 0,
       "updated": false,
       "answers": [
+        [
+          {
+            "text": "antras",
+            "authorId": "1",
+            "createdAt": "2023-02-12T20:32:37.137Z",
+            "likes": 0,
+            "dislikes": 0
+          }
+        ],
         {
-          "text": "ziauru",
+          "text": "antras",
           "authorId": "1",
-          "createdAt": "2023-02-12T10:46:21.483Z",
+          "createdAt": "2023-02-12T20:37:21.945Z",
           "likes": 0,
           "dislikes": 0
         },
         {
-          "text": "nafik",
+          "text": "eeee",
           "authorId": "1",
-          "createdAt": "2023-02-12T10:49:23.139Z",
-          "likes": 0,
-          "dislikes": 0
-        },
-        {
-          "text": "eee ka hebra",
-          "authorId": "1",
-          "createdAt": "2023-02-12T10:51:36.796Z",
-          "likes": 0,
-          "dislikes": 0
-        },
-        {
-          "text": "ffffffffffuuuuucccckk",
-          "authorId": "2",
-          "createdAt": "2023-02-12T10:58:27.461Z",
+          "createdAt": "2023-02-12T20:37:35.561Z",
           "likes": 0,
           "dislikes": 0
         }
       ]
     },
     {
-      "title": "klausimas 1",
-      "description": "ar gerai ?",
+      "title": "klausimas 2",
+      "description": "sukurta antro userio",
       "authorId": "2",
       "createdAt": "2023-02-12T14:16:02.178Z",
-      "likes": 1,
+      "likes": 3,
       "dislikes": 1,
       "updated": false,
-      "answers": [],
-      "id": 14
+      "answers": [
+        {
+          "text": "ketvirtas atsakymas",
+          "authorId": "1",
+          "createdAt": "2023-02-12T10:51:36.796Z",
+          "likes": 0,
+          "dislikes": 0
+        },
+        [
+          {
+            "text": "ketvirtas atsakymas",
+            "authorId": "1",
+            "createdAt": "2023-02-12T10:51:36.796Z",
+            "likes": 0,
+            "dislikes": 0
+          },
+          {
+            "text": "acfa",
+            "authorId": "1",
+            "createdAt": "2023-02-12T20:27:26.984Z",
+            "likes": 0,
+            "dislikes": 0
+          }
+        ],
+        [
+          {
+            "text": "ketvirtas atsakymas",
+            "authorId": "1",
+            "createdAt": "2023-02-12T10:51:36.796Z",
+            "likes": 0,
+            "dislikes": 0
+          },
+          [
+            {
+              "text": "ketvirtas atsakymas",
+              "authorId": "1",
+              "createdAt": "2023-02-12T10:51:36.796Z",
+              "likes": 0,
+              "dislikes": 0
+            },
+            {
+              "text": "acfa",
+              "authorId": "1",
+              "createdAt": "2023-02-12T20:27:26.984Z",
+              "likes": 0,
+              "dislikes": 0
+            }
+          ],
+          {
+            "text": "ar eina",
+            "authorId": "1",
+            "createdAt": "2023-02-12T20:30:47.544Z",
+            "likes": 0,
+            "dislikes": 0
+          }
+        ],
+        {
+          "text": "ar eina",
+          "authorId": "1",
+          "createdAt": "2023-02-12T20:32:09.373Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ],
+      "id": 2
     },
     {
       "title": "watafak",
@@ -78,45 +137,100 @@
       "likes": 2,
       "dislikes": 0,
       "updated": false,
-      "answers": [],
-      "id": 15
+      "answers": [
+        [
+          {
+            "text": "aaa",
+            "authorId": "1",
+            "createdAt": "2023-02-12T20:26:44.593Z",
+            "likes": 0,
+            "dislikes": 0
+          }
+        ],
+        {
+          "text": "aaa",
+          "authorId": "1",
+          "createdAt": "2023-02-12T20:26:50.492Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ],
+      "id": 3
     },
     {
-      "title": "afefEEE",
-      "description": "EFEF",
+      "title": "mano klausimas",
+      "description": "During this project, you will need to ied version.",
       "authorId": "3",
-      "createdAt": "2023-02-12T16:01:26.400Z",
+      "createdAt": "2023-02-12T17:19:24.589Z",
+      "likes": 2,
+      "dislikes": 0,
+      "updated": false,
+      "answers": [
+        {
+          "text": "mano atsakymas",
+          "authorId": "3",
+          "createdAt": "2023-02-12T17:20:19.509Z",
+          "likes": 0,
+          "dislikes": 0
+        },
+        {
+          "text": "dar vienas atsakymas",
+          "authorId": "3",
+          "createdAt": "2023-02-12T17:23:38.933Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ],
+      "id": 4
+    },
+    {
+      "title": "mano klausimas",
+      "description": "During create an online forum usin version.",
+      "authorId": "3",
+      "createdAt": "2023-02-12T17:19:44.957Z",
       "likes": 1,
       "dislikes": 0,
       "updated": false,
-      "answers": [],
-      "id": 16
+      "answers": [
+        {
+          "text": "seffe",
+          "authorId": "3",
+          "createdAt": "2023-02-12T17:24:58.533Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ],
+      "id": 5
     },
     {
-      "title": "dddd",
-      "description": "sss",
+      "title": "kitas klausimas",
+      "description": "koks cia dar klausimas ",
       "authorId": "3",
-      "createdAt": "2023-02-12T16:04:15.056Z",
+      "createdAt": "2023-02-12T18:29:47.490Z",
       "likes": 0,
       "dislikes": 0,
       "updated": false,
       "answers": [
         {
-          "text": "ziauru",
-          "authorId": "1",
-          "createdAt": "2023-02-12T10:46:21.483Z",
-          "likes": 0,
-          "dislikes": 0
-        },
-        {
-          "text": "nafik",
-          "authorId": "1",
-          "createdAt": "2023-02-12T10:49:23.139Z",
+          "text": "atsakymas i klausima",
+          "authorId": "3",
+          "createdAt": "2023-02-12T18:30:49.202Z",
           "likes": 0,
           "dislikes": 0
         }
       ],
-      "id": 17
+      "id": 6
+    },
+    {
+      "title": "naujas",
+      "description": "klausimas",
+      "authorId": 1,
+      "createdAt": "2023-02-12T18:37:25.802Z",
+      "likes": 0,
+      "dislikes": 0,
+      "updated": false,
+      "answers": [],
+      "id": 7
     }
   ]
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import Question from "./Question";
 import EditQuestion from "./EditQuestion";
+import Question from "./Question";
 
-function QuestionList({ questions, onUpdateQuestion, onDeleteQuestion, authorId }) {
+function QuestionList({ questions, onUpdateAnswer, onUpdateQuestion, onDeleteQuestion, handleAddAnswer, onDeleteAnswer, authorId, userId }) {
     return (
         <div className="klausimai">
-            {questions && questions.map((question) => (
+            {questions.map((question) => (
                 <div key={question.id}>
                     {question.isEditing ? (
                         <EditQuestion
@@ -16,12 +16,18 @@ function QuestionList({ questions, onUpdateQuestion, onDeleteQuestion, authorId 
                         />
                     ) : (
                         <Question
+                            key={question.id}
                             question={question}
+                            onUpdateAnswer={onUpdateAnswer}
                             onUpdateQuestion={onUpdateQuestion}
                             onDeleteQuestion={onDeleteQuestion}
+                            onDeleteAnswer={onDeleteAnswer}
+                            handleAddAnswer={handleAddAnswer}
                             authorId={authorId}
+                            userId={userId}
                         />
                     )}
+
                 </div>
             ))}
         </div>
