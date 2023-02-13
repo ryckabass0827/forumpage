@@ -21,8 +21,8 @@
   ],
   "questions": [
     {
-      "title": "wwwwwwwwwwwww",
-      "description": "eeeeeeeeee",
+      "title": "vasara",
+      "description": "ka veikti vasara ?",
       "authorId": "1",
       "createdAt": "2023-02-13T01:00:21.226Z",
       "likes": 0,
@@ -32,47 +32,84 @@
       "answers": [
         {
           "id": 836,
-          "text": "sssssss",
+          "text": "prie juros vaziuot",
           "authorId": "1",
           "createdAt": "2023-02-13T01:00:21.226Z",
-          "likes": 0,
+          "likes": 9999,
           "dislikes": 0
         }
-      ],
-      "text": "sssssssssaaaaa ccccc"
+      ]
     },
     {
-      "title": "wwwwwwwwwwwww",
-      "description": "eeeeeeeeee",
+      "title": "Ruduo",
+      "description": "ka veikti rudeni ?",
       "authorId": "1",
       "createdAt": "2023-02-13T00:33:16.847Z",
       "likes": 2,
       "dislikes": 0,
       "updated": false,
       "id": 2,
-      "answers": []
+      "answers": [
+        {
+          "id": 353,
+          "text": "grebti lapus....",
+          "authorId": "1",
+          "createdAt": "2023-02-13T01:14:08.619Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ]
     },
     {
-      "title": "wwwwwwwwwwwww",
-      "description": "eeeeeeeeee",
+      "title": "Ziema",
+      "description": "ka veikti ziema ??",
       "authorId": "1",
       "createdAt": "2023-02-13T00:33:16.847Z",
       "likes": 1,
       "dislikes": 0,
       "updated": false,
       "id": 4,
-      "answers": []
+      "answers": [
+        {
+          "id": 144,
+          "text": "sedeti ir koduoti.....",
+          "authorId": "1",
+          "createdAt": "2023-02-13T01:14:46.859Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ]
     },
     {
-      "title": "wwwwwwwwwwwww",
-      "description": "eeeeeeeeee",
+      "title": "pavasaris",
+      "description": "ka veikti pavasari ???",
       "authorId": "1",
       "createdAt": "2023-02-13T00:33:16.847Z",
       "likes": 1,
       "dislikes": 0,
       "updated": false,
       "id": 3,
-      "answers": []
+      "answers": [
+        {
+          "id": 767,
+          "text": "Begti nuo biciu !",
+          "authorId": "1",
+          "createdAt": "2023-02-13T01:15:50.003Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ]
+    },
+    {
+      "title": "naujas",
+      "description": "ar senas ?",
+      "authorId": "1",
+      "createdAt": "2023-02-13T01:16:16.467Z",
+      "likes": 1,
+      "dislikes": 0,
+      "updated": false,
+      "answers": [],
+      "id": 5
     }
   ]
 }

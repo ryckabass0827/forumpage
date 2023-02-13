@@ -76,21 +76,6 @@ function Question({ question, onUpdateQuestion, onDeleteAnswer, onUpdateAnswer, 
     };
 
 
-    const handleUpdate = (updatedQuestion) => {
-        fetch(`http://localhost:4000/questions/${question.id}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedQuestion),
-        })
-            .then(res => res.json())
-            .then(data => {
-                onUpdateQuestion(data);
-                setIsEditing(false);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    };
 
     return (
         <div className="question">
