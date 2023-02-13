@@ -17,6 +17,12 @@
       "password": "12345",
       "username": "useris",
       "id": 3
+    },
+    {
+      "email": "naudotojas5@gmail.com",
+      "password": "12345",
+      "username": "basta",
+      "id": 4
     }
   ],
   "questions": [
@@ -25,8 +31,8 @@
       "description": "ka veikti vasara ?",
       "authorId": "1",
       "createdAt": "2023-02-13T01:00:21.226Z",
-      "likes": 0,
-      "dislikes": 0,
+      "likes": 1000,
+      "dislikes": 3,
       "updated": false,
       "id": 1,
       "answers": [
@@ -35,18 +41,19 @@
           "text": "prie juros vaziuot",
           "authorId": "1",
           "createdAt": "2023-02-13T01:00:21.226Z",
-          "likes": 9999,
-          "dislikes": 0
+          "likes": 999,
+          "dislikes": 3
         }
-      ]
+      ],
+      "text": "prie juros vaziuot 5"
     },
     {
       "title": "Ruduo",
       "description": "ka veikti rudeni ?",
       "authorId": "1",
-      "createdAt": "2023-02-13T00:33:16.847Z",
-      "likes": 2,
-      "dislikes": 0,
+      "createdAt": "2023-02-13T01:14:08.619Z",
+      "likes": 10,
+      "dislikes": 5,
       "updated": false,
       "id": 2,
       "answers": [
@@ -55,17 +62,18 @@
           "text": "grebti lapus....",
           "authorId": "1",
           "createdAt": "2023-02-13T01:14:08.619Z",
-          "likes": 0,
-          "dislikes": 0
+          "likes": 10,
+          "dislikes": 5
         }
-      ]
+      ],
+      "text": "grebti lapus.... fff"
     },
     {
       "title": "Ziema",
       "description": "ka veikti ziema ??",
-      "authorId": "1",
-      "createdAt": "2023-02-13T00:33:16.847Z",
-      "likes": 1,
+      "authorId": 1,
+      "createdAt": "2023-02-13T01:14:46.859Z",
+      "likes": 0,
       "dislikes": 0,
       "updated": false,
       "id": 4,
@@ -73,20 +81,21 @@
         {
           "id": 144,
           "text": "sedeti ir koduoti.....",
-          "authorId": "1",
+          "authorId": 1,
           "createdAt": "2023-02-13T01:14:46.859Z",
           "likes": 0,
           "dislikes": 0
         }
-      ]
+      ],
+      "text": "sedeti ir koduoti...ddd.."
     },
     {
       "title": "pavasaris",
       "description": "ka veikti pavasari ???",
-      "authorId": "1",
+      "authorId": 1,
       "createdAt": "2023-02-13T00:33:16.847Z",
-      "likes": 1,
-      "dislikes": 0,
+      "likes": 78,
+      "dislikes": 4,
       "updated": false,
       "id": 3,
       "answers": [
@@ -95,20 +104,29 @@
           "text": "Begti nuo biciu !",
           "authorId": "1",
           "createdAt": "2023-02-13T01:15:50.003Z",
-          "likes": 0,
-          "dislikes": 0
+          "likes": 2,
+          "dislikes": 4
         }
       ]
     },
     {
       "title": "naujas",
-      "description": "ar senas ?",
+      "description": "ka veiksim ?",
       "authorId": "1",
-      "createdAt": "2023-02-13T01:16:16.467Z",
-      "likes": 1,
+      "createdAt": "2023-02-13T06:24:46.037Z",
+      "likes": 0,
       "dislikes": 0,
       "updated": false,
-      "answers": [],
+      "answers": [
+        {
+          "id": 862,
+          "text": "wwww",
+          "authorId": "1",
+          "createdAt": "2023-02-13T06:24:53.916Z",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ],
       "id": 5
     }
   ]

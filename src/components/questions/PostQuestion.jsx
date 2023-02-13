@@ -34,9 +34,12 @@ const PostQuestion = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
-            <input type="text" value={description} onChange={e => setDescription(e.target.value)} />
+        <form className='klausimas' onSubmit={handleSubmit}>
+            <label htmlFor="">Question Title
+                <input type="text" value={title} onChange={e => setTitle(e.target.value)} /></label>
+
+            <label htmlFor="">Your Question
+                <input type="text" value={description} onChange={e => setDescription(e.target.value)} /></label>
             <button type="submit">Post</button>
         </form>
     );

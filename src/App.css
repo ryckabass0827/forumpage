@@ -21,4 +21,29 @@ body {
 
 .question {
   border: black 1px solid;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.klausimas {
+  padding: 20px;
+  background-color: red;
+  color: aliceblue;
+}
+
+.klausimai {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+
+}
+
+.answer-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

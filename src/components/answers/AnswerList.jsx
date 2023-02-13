@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Moment from "react-moment";
 import Answer from "./Answer";
 import EditAnswer from "./EditAnswer";
+import AuthContext from "../../context/AuthContext";
 
 function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question, onUpdateQuestion, onDeleteAnswer }) {
+    const { isAuthenticated } = useContext(AuthContext);
     const [answerText, setAnswerText] = useState("");
     const [isEditing, setIsEditing] = useState(false);
 
     const handleAddAnswer = () => {
+        if (!isAuthenticated) {
+            alert("Please log in to add an answer.");
+            return;
+        }
+
         if (!answerText) {
             alert("Please enter an answer.");
             return;
