@@ -3,7 +3,7 @@ import Moment from "react-moment";
 import Answer from "./Answer";
 import EditAnswer from "./EditAnswer";
 
-function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question }) {
+function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question, onUpdateQuestion, onDeleteAnswer }) {
     const [answerText, setAnswerText] = useState("");
     const [isEditing, setIsEditing] = useState(false);
 
@@ -14,11 +14,13 @@ function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question }) {
         }
 
         const newAnswer = {
+            id: Math.floor(Math.random() * 1000) + 1,
             text: answerText,
             authorId: localStorage.getItem("userId"),
             createdAt: new Date(),
             likes: 0,
-            dislikes: 0
+            dislikes: 0,
+
         };
 
         const updatedQuestion = {
@@ -34,7 +36,7 @@ function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question }) {
             .then((res) => res.json())
             .then((data) => {
                 onAddAnswer(data.answers);
-                onUpdateAnswer(data.answers);
+
                 setAnswerText("");
             })
             .catch((error) => {
@@ -42,36 +44,38 @@ function AnswerList({ answers, onAddAnswer, onUpdateAnswer, question }) {
             });
     };
 
+    const handleDeleteAnswer = (deletedAnswerId) => {
+        const updatedAnswers = answers.filter((answer) => answer.id !== deletedAnswerId);
+        const updatedQuestion = {
+            ...question,
+            answers: updatedAnswers
+        };
+        fetch(`http://localhost:4000/questions/${question.id}`, {
+            method: "DELETE",
+        })
+            .then(() => {
+                onUpdateQuestion(updatedQuestion);
+                onDeleteAnswer(deletedAnswerId);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+
+
     return (
         <div className="answer-list">
             <h4>Answers:</h4>
             {answers?.map((answer, index) => (
                 <div key={index}>
                     {isEditing ? (
-                        <EditAnswer answer={answer} onUpdateAnswer={onUpdateAnswer} />
+                        <EditAnswer answer={answer} onUpdateAnswer={onUpdateAnswer} question={question} />
                     ) : (
                         <Answer
                             answer={answer}
                             onUpdateAnswer={() => setIsEditing(true)}
-                            onDeleteAnswer={() => {
-                                const updatedAnswers = answers.filter(
-                                    (ans) => ans.id !== answer.id
-                                );
-                                const updatedQuestion = { ...question, answers: updatedAnswers };
-                                fetch(`http://localhost:4000/questions/${question.id}`, {
-                                    method: "PATCH",
-                                    headers: { "Content-Type": "application/json" },
-                                    body: JSON.stringify(updatedQuestion)
-                                })
-                                    .then((res) => res.json())
-                                    .then((data) => {
-                                        onUpdateAnswer(data.answers);
-                                    })
-                                    .catch((error) => {
-                                        console.error(error);
-                                    });
-                            }}
-
+                            onDeleteAnswer={() => handleDeleteAnswer(answer.id)}
+                            question={question}
                         />
                     )}
                 </div>

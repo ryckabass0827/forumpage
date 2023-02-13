@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-function EditAnswer({ answer, onUpdateAnswer }) {
+function EditAnswer({ answer, onUpdateAnswer, question }) {
     const [answerText, setAnswerText] = useState(answer.text);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/answers/${answer.id}`)
+        fetch(`http://localhost:4000/questions/${question.id}`)
             .then((res) => res.json())
             .then((data) => {
                 setAnswerText(data.text);
@@ -25,7 +25,7 @@ function EditAnswer({ answer, onUpdateAnswer }) {
             text: answerText
         };
 
-        fetch(`http://localhost:4000/answers/${answer.id}`, {
+        fetch(`http://localhost:4000/questions/${question.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedAnswer)

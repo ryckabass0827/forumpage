@@ -35,7 +35,7 @@ function Home(question) {
 
     const handleUpdateQuestion = (question) => {
         setQuestions(questions.map((q) => (q.id === question.id ? question : q)));
-        setSuccess("Question updated successfully");
+
     };
 
     const handleDeleteQuestion = (questionId) => {
@@ -53,10 +53,10 @@ function Home(question) {
         setQuestions(updatedQuestions);
     };
 
-    const handleAddAnswer = (newAnswer) => {
+    const handleAddAnswer = (questionId, answer) => {
         const updatedQuestions = questions.map((q) => {
-            if (q.id === newAnswer.questionId) {
-                return { ...q, answers: q.answers.concat(newAnswer) };
+            if (q.id === questionId) {
+                return { ...q, answers: [...q.answers, answer] };
             }
             return q;
         });

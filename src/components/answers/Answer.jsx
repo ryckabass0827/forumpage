@@ -1,76 +1,65 @@
-import React, { useContext, useState } from "react";
-import Moment from "react-moment";
-import AuthContext from '../../context/AuthContext';
+import React, { useState, useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 
-function Answer({ answer, onDeleteAnswer }) {
-    const { isAuthenticated, userId } = useContext(AuthContext);
+function Answer({ answer, question, onUpdateAnswer, onDeleteAnswer }) {
+    const { isAuthenticated } = useContext(AuthContext);
     const [likes, setLikes] = useState(answer.likes);
     const [dislikes, setDislikes] = useState(answer.dislikes);
-    const { text, authorId, createdAt } = answer;
+    const [reacted, setReacted] = useState(false);
 
     const handleLike = () => {
-        if (!isAuthenticated) {
-            fetch(`http://localhost:4000/questions/${answer.id}`, {
+        if (isAuthenticated && !reacted) {
+            fetch(`http://localhost:4000/questions/${question.id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ likes: likes + 1 })
+                body: JSON.stringify({ likes: likes + 1 }),
             })
-                .then(res => res.json())
-                .then(data => {
+                .then((res) => res.json())
+                .then((data) => {
                     setLikes(data.likes);
+                    setReacted(true);
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error(error);
                 });
         }
     };
 
     const handleDislike = () => {
-        if (!isAuthenticated) {
-            fetch(`http://localhost:4000/questions/${answer.id}`, {
+        if (isAuthenticated && !reacted) {
+            fetch(`http://localhost:4000/questions/${question.id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ dislikes: dislikes + 1 })
+                body: JSON.stringify({ dislikes: dislikes + 1 }),
             })
-                .then(res => res.json())
-                .then(data => {
+                .then((res) => res.json())
+                .then((data) => {
                     setDislikes(data.dislikes);
+                    setReacted(true);
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error(error);
                 });
         }
     };
 
-    const handleDelete = () => {
-        fetch(`http://localhost:4000/answers/${answer.id}`, {
-            method: "DELETE"
-        })
-            .then(() => {
-                onDeleteAnswer(answer.id);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    };
 
-    if (!isAuthenticated) {
-        return <p>Please log in to post an answer.</p>;
-    }
 
     return (
         <div className="answer">
-            <p>{text}</p>
+            <p>{answer.text}</p>
             <p>
-                Created by user {authorId} on{" "}
-                <Moment format="YYYY-MM-DD">{createdAt}</Moment>
+                Posted by {answer.authorId} on {new Date(answer.createdAt).toLocaleString()}
             </p>
             <p>
                 <button onClick={handleLike}>Like</button> {likes} |{" "}
                 <button onClick={handleDislike}>Dislike</button> {dislikes}
             </p>
-            {userId === authorId && (
-                <button onClick={handleDelete}>Delete</button>
+            {isAuthenticated && (
+                <div>
+                    <button onClick={() => onUpdateAnswer(answer.id)}>Edit</button>
+                    <button onClick={() => onDeleteAnswer(answer.id)}>Delete</button>
+                </div>
             )}
         </div>
     );

@@ -21,216 +21,58 @@
   ],
   "questions": [
     {
-      "id": 1,
-      "title": "pirmas",
-      "description": "klausimas ? koks klausimas ?",
+      "title": "wwwwwwwwwwwww",
+      "description": "eeeeeeeeee",
       "authorId": "1",
-      "createdAt": "2023-02-12T10:14:36.066Z",
-      "likes": 2,
+      "createdAt": "2023-02-13T01:00:21.226Z",
+      "likes": 0,
       "dislikes": 0,
       "updated": false,
-      "answers": [
-        [
-          {
-            "text": "antras",
-            "authorId": "1",
-            "createdAt": "2023-02-12T20:32:37.137Z",
-            "likes": 0,
-            "dislikes": 0
-          }
-        ],
-        {
-          "text": "antras",
-          "authorId": "1",
-          "createdAt": "2023-02-12T20:37:21.945Z",
-          "likes": 0,
-          "dislikes": 0
-        },
-        {
-          "text": "eeee",
-          "authorId": "1",
-          "createdAt": "2023-02-12T20:37:35.561Z",
-          "likes": 0,
-          "dislikes": 0
-        }
-      ]
-    },
-    {
-      "title": "klausimas 2",
-      "description": "sukurta antro userio",
-      "authorId": "2",
-      "createdAt": "2023-02-12T14:16:02.178Z",
-      "likes": 3,
-      "dislikes": 1,
-      "updated": false,
+      "id": 1,
       "answers": [
         {
-          "text": "ketvirtas atsakymas",
+          "id": 836,
+          "text": "sssssss",
           "authorId": "1",
-          "createdAt": "2023-02-12T10:51:36.796Z",
-          "likes": 0,
-          "dislikes": 0
-        },
-        [
-          {
-            "text": "ketvirtas atsakymas",
-            "authorId": "1",
-            "createdAt": "2023-02-12T10:51:36.796Z",
-            "likes": 0,
-            "dislikes": 0
-          },
-          {
-            "text": "acfa",
-            "authorId": "1",
-            "createdAt": "2023-02-12T20:27:26.984Z",
-            "likes": 0,
-            "dislikes": 0
-          }
-        ],
-        [
-          {
-            "text": "ketvirtas atsakymas",
-            "authorId": "1",
-            "createdAt": "2023-02-12T10:51:36.796Z",
-            "likes": 0,
-            "dislikes": 0
-          },
-          [
-            {
-              "text": "ketvirtas atsakymas",
-              "authorId": "1",
-              "createdAt": "2023-02-12T10:51:36.796Z",
-              "likes": 0,
-              "dislikes": 0
-            },
-            {
-              "text": "acfa",
-              "authorId": "1",
-              "createdAt": "2023-02-12T20:27:26.984Z",
-              "likes": 0,
-              "dislikes": 0
-            }
-          ],
-          {
-            "text": "ar eina",
-            "authorId": "1",
-            "createdAt": "2023-02-12T20:30:47.544Z",
-            "likes": 0,
-            "dislikes": 0
-          }
-        ],
-        {
-          "text": "ar eina",
-          "authorId": "1",
-          "createdAt": "2023-02-12T20:32:09.373Z",
+          "createdAt": "2023-02-13T01:00:21.226Z",
           "likes": 0,
           "dislikes": 0
         }
       ],
-      "id": 2
+      "text": "sssssssssaaaaa ccccc"
     },
     {
-      "title": "watafak",
-      "description": "blt",
-      "authorId": "2",
-      "createdAt": "2023-02-12T15:24:01.598Z",
+      "title": "wwwwwwwwwwwww",
+      "description": "eeeeeeeeee",
+      "authorId": "1",
+      "createdAt": "2023-02-13T00:33:16.847Z",
       "likes": 2,
       "dislikes": 0,
       "updated": false,
-      "answers": [
-        [
-          {
-            "text": "aaa",
-            "authorId": "1",
-            "createdAt": "2023-02-12T20:26:44.593Z",
-            "likes": 0,
-            "dislikes": 0
-          }
-        ],
-        {
-          "text": "aaa",
-          "authorId": "1",
-          "createdAt": "2023-02-12T20:26:50.492Z",
-          "likes": 0,
-          "dislikes": 0
-        }
-      ],
-      "id": 3
+      "id": 2,
+      "answers": []
     },
     {
-      "title": "mano klausimas",
-      "description": "During this project, you will need to ied version.",
-      "authorId": "3",
-      "createdAt": "2023-02-12T17:19:24.589Z",
-      "likes": 2,
-      "dislikes": 0,
-      "updated": false,
-      "answers": [
-        {
-          "text": "mano atsakymas",
-          "authorId": "3",
-          "createdAt": "2023-02-12T17:20:19.509Z",
-          "likes": 0,
-          "dislikes": 0
-        },
-        {
-          "text": "dar vienas atsakymas",
-          "authorId": "3",
-          "createdAt": "2023-02-12T17:23:38.933Z",
-          "likes": 0,
-          "dislikes": 0
-        }
-      ],
-      "id": 4
-    },
-    {
-      "title": "mano klausimas",
-      "description": "During create an online forum usin version.",
-      "authorId": "3",
-      "createdAt": "2023-02-12T17:19:44.957Z",
+      "title": "wwwwwwwwwwwww",
+      "description": "eeeeeeeeee",
+      "authorId": "1",
+      "createdAt": "2023-02-13T00:33:16.847Z",
       "likes": 1,
       "dislikes": 0,
       "updated": false,
-      "answers": [
-        {
-          "text": "seffe",
-          "authorId": "3",
-          "createdAt": "2023-02-12T17:24:58.533Z",
-          "likes": 0,
-          "dislikes": 0
-        }
-      ],
-      "id": 5
+      "id": 4,
+      "answers": []
     },
     {
-      "title": "kitas klausimas",
-      "description": "koks cia dar klausimas ",
-      "authorId": "3",
-      "createdAt": "2023-02-12T18:29:47.490Z",
-      "likes": 0,
+      "title": "wwwwwwwwwwwww",
+      "description": "eeeeeeeeee",
+      "authorId": "1",
+      "createdAt": "2023-02-13T00:33:16.847Z",
+      "likes": 1,
       "dislikes": 0,
       "updated": false,
-      "answers": [
-        {
-          "text": "atsakymas i klausima",
-          "authorId": "3",
-          "createdAt": "2023-02-12T18:30:49.202Z",
-          "likes": 0,
-          "dislikes": 0
-        }
-      ],
-      "id": 6
-    },
-    {
-      "title": "naujas",
-      "description": "klausimas",
-      "authorId": 1,
-      "createdAt": "2023-02-12T18:37:25.802Z",
-      "likes": 0,
-      "dislikes": 0,
-      "updated": false,
-      "answers": [],
-      "id": 7
+      "id": 3,
+      "answers": []
     }
   ]
 }
